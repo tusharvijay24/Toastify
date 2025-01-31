@@ -1,0 +1,16 @@
+PODS:
+  - Toastify (0.1.0)
+
+DEPENDENCIES:
+  - Toastify (from `../`)
+
+EXTERNAL SOURCES:
+  Toastify:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Toastify: 11589b4dbd34b88980604be65c2545dd12cc86f8
+
+PODFILE CHECKSUM: 350b12c5cffa91f8b80d6a67368d26c580bc8a18
+
+COCOAPODS: 1.16.2
