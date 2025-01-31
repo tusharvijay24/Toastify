@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Toastify'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A customizable toast message library for Swift.'
   s.homepage         = 'https://github.com/tusharvijay24/Toastify'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
