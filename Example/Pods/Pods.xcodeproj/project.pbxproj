@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0413F9BD2D4CA9F100F0FF76 /* ToastConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413F9BC2D4CA9F100F0FF76 /* ToastConfig.swift */; };
-		0413F9BF2D4CAA2A00F0FF76 /* Toastify.podspec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413F9BE2D4CAA2A00F0FF76 /* Toastify.podspec.swift */; };
+		0413F9BF2D4CAA2A00F0FF76 /* ToastifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413F9BE2D4CAA2A00F0FF76 /* ToastifyManager.swift */; };
+		0413F9C12D4CB03E00F0FF76 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413F9C02D4CB03E00F0FF76 /* Logger.swift */; };
 		0851281765BD5A9373EE37D19A7350A5 /* Pods-Toastify_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5384AEF3FF62789C9943F6AFBDDEE748 /* Pods-Toastify_Tests-dummy.m */; };
 		35E5E599B6878AF05398B27E88C92B04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		43455DB94FBDA6D5C3E9C902261DC6BD /* Toastify-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 146684A1E8ABCB36067FDDC813F7DB64 /* Toastify-dummy.m */; };
@@ -40,7 +41,8 @@
 
 /* Begin PBXFileReference section */
 		0413F9BC2D4CA9F100F0FF76 /* ToastConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToastConfig.swift; path = Toastify/Classes/ToastConfig.swift; sourceTree = "<group>"; };
-		0413F9BE2D4CAA2A00F0FF76 /* Toastify.podspec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Toastify.podspec.swift; path = Toastify/Classes/Toastify.podspec.swift; sourceTree = "<group>"; };
+		0413F9BE2D4CAA2A00F0FF76 /* ToastifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToastifyManager.swift; path = Toastify/Classes/ToastifyManager.swift; sourceTree = "<group>"; };
+		0413F9C02D4CB03E00F0FF76 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Toastify/Classes/Logger.swift; sourceTree = "<group>"; };
 		146684A1E8ABCB36067FDDC813F7DB64 /* Toastify-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toastify-dummy.m"; sourceTree = "<group>"; };
 		14A50D24B1DA1FBB93A5FE82F4E22144 /* Pods-Toastify_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Toastify_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		19357851A29A41688A2A0ECB31DEAB01 /* Pods-Toastify_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Toastify_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -159,8 +161,9 @@
 		97FD0DD935DE466ADB122FEDE38645F8 /* Toastify */ = {
 			isa = PBXGroup;
 			children = (
-				0413F9BE2D4CAA2A00F0FF76 /* Toastify.podspec.swift */,
+				0413F9C02D4CB03E00F0FF76 /* Logger.swift */,
 				0413F9BC2D4CA9F100F0FF76 /* ToastConfig.swift */,
+				0413F9BE2D4CAA2A00F0FF76 /* ToastifyManager.swift */,
 				39EF190ECAAF5AF50B8A899E5CDCA1D4 /* ToastView.swift */,
 				69AF7555FDE8F37CB70F1547A2F7020E /* Pod */,
 				81D15093BABCCA46C29E76121DBD703D /* Support Files */,
@@ -389,7 +392,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0413F9BF2D4CAA2A00F0FF76 /* Toastify.podspec.swift in Sources */,
+				0413F9C12D4CB03E00F0FF76 /* Logger.swift in Sources */,
+				0413F9BF2D4CAA2A00F0FF76 /* ToastifyManager.swift in Sources */,
 				9A451E827830F26712DB0D30D175A529 /* ToastView.swift in Sources */,
 				43455DB94FBDA6D5C3E9C902261DC6BD /* Toastify-dummy.m in Sources */,
 				0413F9BD2D4CA9F100F0FF76 /* ToastConfig.swift in Sources */,

@@ -13,7 +13,6 @@ class ToastView: UIView {
     
     init(config: ToastConfig) {
         super.init(frame: .zero)
-        
         setupUI(config: config)
     }
     
@@ -42,34 +41,41 @@ class ToastView: UIView {
         ])
     }
     
-    func show(in view: UIView, duration: TimeInterval, position: ToastConfig.Position) {
-        view.addSubview(self)
-        translatesAutoresizingMaskIntoConstraints = false
+    func show(in parentView: UIView, duration: TimeInterval, position: ToastConfig.Position, keyboardHeight: CGFloat) {
+        DispatchQueue.main.async {
+            guard parentView.window != nil else {
+                Logger.debug("❌ Parent view is not attached to a window. Aborting toast display.")
+                return
+            }
 
-        let bottomAnchorConstant: CGFloat
-        switch position {
-        case .top:
-            bottomAnchorConstant = view.safeAreaInsets.top + 50
-        case .middle:
-            bottomAnchorConstant = view.frame.height / 2
-        case .bottom:
-            bottomAnchorConstant = view.frame.height - 100
-        case .aboveBottom:
-            bottomAnchorConstant = view.frame.height - 150
-        }
+            Logger.debug("🚀 Adding ToastView to parentView")
+            parentView.addSubview(self)
+            self.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([
-            centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -bottomAnchorConstant),
-            widthAnchor.constraint(lessThanOrEqualToConstant: view.frame.width - 40)
-        ])
+            let bottomAnchorConstant: CGFloat
+            switch position {
+            case .top:
+                bottomAnchorConstant = parentView.frame.height - 100
+            case .middle:
+                bottomAnchorConstant = parentView.frame.height / 2
+            case .bottom:
+                bottomAnchorConstant = keyboardHeight > 0 ? keyboardHeight + 20 : parentView.safeAreaInsets.top + 50
+            }
 
-        alpha = 0
-        UIView.animate(withDuration: 0.3, animations: { self.alpha = 1 })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-            UIView.animate(withDuration: 0.3, animations: { self.alpha = 0 }) { _ in
-                self.removeFromSuperview()
+            NSLayoutConstraint.activate([
+                self.centerXAnchor.constraint(equalTo: parentView.centerXAnchor),
+                self.bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: -bottomAnchorConstant),
+                self.widthAnchor.constraint(lessThanOrEqualToConstant: parentView.frame.width - 40)
+            ])
+
+            self.alpha = 0
+            UIView.animate(withDuration: 0.3, animations: { self.alpha = 1 })
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                UIView.animate(withDuration: 0.3, animations: { self.alpha = 0 }) { _ in
+                    self.removeFromSuperview()
+                    Logger.debug("✅ Toast removed")
+                }
             }
         }
     }

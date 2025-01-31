@@ -10,7 +10,7 @@ import UIKit
 
 public struct ToastConfig {
     public enum Position {
-        case top, middle, bottom, aboveBottom
+        case top, middle, bottom
     }
     
     public var message: String
