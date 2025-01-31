@@ -22,7 +22,7 @@ pod 'Toastify'
 
 ## Author
 
-tusharvijay49, tusharvijayvargiya24112000@gmail.com
+tusharvijay24, tusharvijayvargiya24112000@gmail.com
 
 ## License
 
