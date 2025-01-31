@@ -25,7 +25,7 @@ Toastify is a lightweight and customizable **toast notification library** for iO
 To install **Toastify**, add the following line to your `Podfile`:
 
 ```ruby
-pod 'Toastify'
+pod 'Toastify', :git => 'https://github.com/tusharvijay24/Toastify.git'
 ```
 
 Then, run:
