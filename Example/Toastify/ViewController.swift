@@ -27,7 +27,7 @@ class ViewController: UIViewController {
                 duration: 3.0,
                 backgroundColor: .red,
                 textColor: .white,
-                position: .bottom
+                position: .top
             )
         }
     }

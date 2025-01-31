@@ -41,7 +41,7 @@ class ToastView: UIView {
         ])
     }
     
-    func show(in parentView: UIView, duration: TimeInterval, position: ToastConfig.Position, keyboardHeight: CGFloat) {
+    func show(in parentView: UIView, duration: TimeInterval, position: ToastConfig.Position) {
         DispatchQueue.main.async {
             guard parentView.window != nil else {
                 Logger.debug("❌ Parent view is not attached to a window. Aborting toast display.")
@@ -54,12 +54,12 @@ class ToastView: UIView {
 
             let bottomAnchorConstant: CGFloat
             switch position {
-            case .top:
-                bottomAnchorConstant = parentView.frame.height - 100
+            case .bottom:
+                bottomAnchorConstant = parentView.safeAreaInsets.top + 50
             case .middle:
                 bottomAnchorConstant = parentView.frame.height / 2
-            case .bottom:
-                bottomAnchorConstant = keyboardHeight > 0 ? keyboardHeight + 20 : parentView.safeAreaInsets.top + 50
+            case .top:
+                bottomAnchorConstant = parentView.frame.height - 100
             }
 
             NSLayoutConstraint.activate([
