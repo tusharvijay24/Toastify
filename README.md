@@ -14,7 +14,7 @@ Toastify is a lightweight and customizable **toast notification library** for iO
 ✅ Simple and easy to use  
 ✅ Fully customizable (text, background color, duration, position)  
 ✅ Works as an **independent floating view**  
-✅ Supports multiple positions: **Top, Middle, Bottom, Above Bottom**  
+✅ Supports multiple positions: **Top, Middle, Bottom**  
 ✅ Supports animations  
 ✅ No interference with UI interactions  
 
@@ -71,7 +71,7 @@ let toastConfig = ToastConfig(
     duration: 2.5,
     backgroundColor: .black,
     textColor: .white,
-    position: .aboveBottom,
+    position: .bottom,
     animation: true
 )
 
@@ -88,7 +88,6 @@ You can position the toast in **four different locations**:
 | `.top`       | Displays the toast at the top |
 | `.middle`    | Displays the toast in the center |
 | `.bottom`    | Displays the toast at the bottom |
-| `.aboveBottom` | Displays the toast slightly above the bottom |
 
 Example:
 ```swift
